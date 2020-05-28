@@ -1,5 +1,3 @@
-import './test.js';
-
 const chatList = document.querySelector('.chat-list');
 const addForm = document.querySelector('.new-chat');
 const updateForm = document.querySelector('.new-name');
@@ -9,7 +7,6 @@ const updateName = document.querySelector('.update-mssg');
 rooms.addEventListener('click', (e) => {
 	if(e.target.tagName === 'BUTTON') {
 		const newRoom = e.target.id;
-		// console.log(newRoom)
 		chatroom.updateRoom(newRoom);
 		chatList.innerHTML = '';
 		chatroom.getChats(change => 
@@ -25,7 +22,6 @@ const chatroom = new Chatroom(dfltName, 'general');
 // the sense of the programm
 chatroom.getChats(change => 
 	updateUI.getChatsHtml(change));
-
 
 // listeners
 addForm.addEventListener('submit', (e) => {
